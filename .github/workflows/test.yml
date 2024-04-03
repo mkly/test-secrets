@@ -12,6 +12,7 @@ jobs:
     - name: Test CD
       run: |
         mkdir ../installation
+        pwd
         cat ./tests/data/install_pyproject.toml > ../installation/pyproject.toml
         cd ../installation
         pwd
