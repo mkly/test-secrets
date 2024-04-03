@@ -19,8 +19,9 @@ jobs:
           api_key = "${{ secrets.TWO }}"
       run: |
         mkdir -p config
-        echo $SECRETS_CONFIG > config/secrets.toml
-        cat config/secrets.toml
+        env
+        echo "$SECRETS_CONFIG"
+        echo "$SECRETS_CONFIG" > config/secrets.toml
       
     - name: show secrets
       run: cat config/secrets.toml
