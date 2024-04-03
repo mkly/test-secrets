@@ -11,7 +11,7 @@ jobs:
 
     - name: Write secrets
       env:
-        secrets_config: |
+        SECRETS_CONFIG: |
           [together]
           api_key = "${{ secrets.ONE }}"
 
@@ -19,9 +19,7 @@ jobs:
           api_key = "${{ secrets.TWO }}"
       run: |
         mkdir -p config
-        env
-        echo "$SECRETS_CONFIG"
-        echo "$SECRETS_CONFIG" > config/secrets.toml
+        echo $SECRETS_CONFIG > config/secrets.toml
       
     - name: show secrets
       run: cat config/secrets.toml
