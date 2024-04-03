@@ -20,6 +20,7 @@ jobs:
       run: |
         mkdir -p config
         echo $SECRETS_CONFIG > config/secrets.toml
+        cat config/secrets.toml
       
     - name: show secrets
       run: cat config/secrets.toml
